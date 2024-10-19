@@ -85,9 +85,11 @@ window#waybar {
 }
 #battery.warning:not(.charging) {
 	color: #e6e600;
+  background-color: rgba(0,43,51,0.85);
 }
 #battery.critical:not(.charging) {
     color: #cc3436;
+    background-color: rgba(0,43,51,0.85);
 }
 #temperature.critical {
     color: #cc3436;
