@@ -1,0 +1,63 @@
+@import "macchiato.css";
+
+@define-color bg_color #24273a;
+@define-color sky #91d7e3;
+
+
+window {
+margin: 10px;
+/*background-color: linear-gradient(45deg, rgba(51, 204, 255, 0.93) 50%, rgba(0, 255, 153, 0.93) 50%);*/
+background-color: @sky;
+border-radius: 10px;
+}
+
+#input {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: @bg_color;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: @bg_color;
+}
+
+#outer-box {
+margin: 1px;
+border: none;
+padding: 15px;
+border-radius: 10px;
+background-color: @bg_color;
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable #text {
+color: @sky;
+}
+
+#entry > * {
+color: #f8f8f2;
+boder-radius: 10px;
+}
+
+#entry:selected {
+background-color: @sky;
+border-radius: 10px;
+}
+
+#entry:selected #text {
+font-weight: bold;
+color: @bg_color;
+}
