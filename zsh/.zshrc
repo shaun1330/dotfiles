@@ -114,6 +114,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias update="sudo pacman -Syu"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
