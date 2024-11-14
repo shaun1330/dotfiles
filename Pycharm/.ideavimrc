@@ -74,7 +74,7 @@ map <leader>ss <Action>(GotoSymbol)
 map <leader>sa <Action>(GotoAction)
 map <leader>gd <Action>(GotoDeclaration)
 
-noremap <C-d> <C-d>zz
-noremap <C-u> <C-u>zz
-noremap n nzz
-noremap N Nzzv
+noremap <C-d> <C-d>zzzv
+noremap <C-u> <C-u>zzzv
+noremap n nzzzv
+noremap N Nzzzv
