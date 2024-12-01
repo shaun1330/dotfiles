@@ -44,6 +44,7 @@ let mapleader = " "
 set clipboard^=unnamed,unnamedplus
 
 set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 noremap <leader>cc :edit ~/.ideavimrc<CR>
 noremap <leader>cs :source ~/.ideavimrc<CR>
