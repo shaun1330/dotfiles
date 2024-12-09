@@ -74,7 +74,7 @@ map <leader>wa <Action>(UnsplitAll)
 map <leader>sc <Action>(GotoClass)
 map <leader>sf <Action>(GotoFile)
 map <leader>ss <Action>(GotoSymbol)
-map <leader>sa <Action>(GotoAction)
+map <leader>sa <Action>(SearchEverywhere)
 map <leader>gd <Action>(GotoDeclaration)
 
 noremap <C-d> <C-d>zzzv
