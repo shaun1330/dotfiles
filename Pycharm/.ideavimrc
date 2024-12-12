@@ -81,3 +81,5 @@ noremap <C-d> <C-d>zzzv
 noremap <C-u> <C-u>zzzv
 noremap n nzzzv
 noremap N Nzzzv
+
+xnoremap <leader>p \"_dP
