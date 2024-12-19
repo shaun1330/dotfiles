@@ -2,6 +2,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set clipboard+=unnamedplus")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -12,6 +13,11 @@ vim.keymap.set("n", "<C-d>", "<C-d>zzzv")
 vim.keymap.set("n", "<C-u>", "<C-u>zzzv")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "(", "(zzzv")
+vim.keymap.set("n", ")", ")zzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
+
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("HighlightOnYank", {}),
