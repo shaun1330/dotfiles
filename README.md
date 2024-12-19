@@ -12,5 +12,6 @@ Sketchybar needs the sketchybar-app-font to be installed. Change the version num
 `curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf`
 
 The icon_map_fn.sh file should be part of the dotfiles but you can get it using the following. 
+
 `curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/icon_map.sh -o ~/.config/sketchybar/plugins/icon_map_fn.sh`
 
