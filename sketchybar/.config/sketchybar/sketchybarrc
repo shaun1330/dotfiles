@@ -1,0 +1,71 @@
+#!/bin/bash
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+source "$CONFIG_DIR/colors.sh"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar.
+# These are only some of the options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+sketchybar --bar height=37 \
+                 blur_radius=30 \
+                 position=top \
+                 sticky=off \
+                 padding_left=10 \
+                 padding_right=10 \
+                 color=$BAR_COLOR
+
+
+
+
+##### Changing Defaults #####
+# We now change some default values, which are applied to all further items.
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+  padding_left=5
+  padding_right=5
+  icon.font="Hack Nerd Font:Bold:17.0"
+  label.font="Hack Nerd Font:Bold:14.0"
+  icon.color=$WHITE
+  label.color=$WHITE
+  background.color=$ITEM_BG_COLOR
+  background.corner_radius=5
+  background.height=24
+  icon.padding_left=4
+  icon.padding_right=10
+  label.padding_left=4
+  label.padding_right=10
+)
+sketchybar --default "${default[@]}"
+#sketchybar -add event aerospace_window_create
+sketchybar --add item clock right \
+           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change \
+           --add item battery right \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change
+
+source $ITEM_DIR/spaces.sh
+
+
+#sketchybar --add item front_app center \
+#           --set front_app background.color=$WHITE icon.color=$BAR_COLOR \
+#                           icon.font="sketchybar-app-font:Regular:16.0" \
+#                           label.color=$BAR_COLOR \
+#                           script="$PLUGIN_DIR/front_app.sh" \
+#           --subscribe front_app front_app_switched
+
+
+
+###### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
+
