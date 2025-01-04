@@ -18,6 +18,7 @@
     "network",
     "temperature",
     "clock",
+    "tray",
     ],
     "hyprland/window": {
       "format": "{}",
