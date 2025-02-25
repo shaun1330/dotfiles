@@ -58,6 +58,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+set matchit
 
 map w [w
 map e ]w
@@ -70,12 +71,14 @@ map <leader>wh <Action>(SplitHorizontally)
 map <leader>ww <Action>(Unsplit)
 map <leader>wa <Action>(UnsplitAll)
 
+map <leader>ff <Action>(FindInPath)
+
 
 map <leader>sc <Action>(GotoClass)
 map <leader>sf <Action>(GotoFile)
-map <leader>ss <Action>(GotoSymbol)
 map <leader>sa <Action>(SearchEverywhere)
 map <leader>gd <Action>(GotoDeclaration)
+map <leader>ss <Action>(NextSplitter)
 
 noremap <C-d> <C-d>zzzv
 noremap <C-u> <C-u>zzzv
