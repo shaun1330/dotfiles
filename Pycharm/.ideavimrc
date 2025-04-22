@@ -70,6 +70,7 @@ map <leader>wv <Action>(SplitVertically)
 map <leader>wh <Action>(SplitHorizontally)
 map <leader>ww <Action>(Unsplit)
 map <leader>wa <Action>(UnsplitAll)
+map <leader>.. <Action>(MoveEditorToOppositeTabGroup)
 
 map <leader>ff <Action>(FindInPath)
 
