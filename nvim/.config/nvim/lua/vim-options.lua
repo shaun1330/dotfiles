@@ -9,6 +9,20 @@ vim.g.maplocalleader = "\\"
 vim.opt.relativenumber = true
 vim.opt.number = true
 
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+})
+
+
+vim.g["test#python#runner"] = "pytest"
+vim.g["test#basic#start_normal"] = 1
+vim.g["test#preserve_screen"] = 1
+vim.g["test#neovim#start_normal"] = 1
+vim.g["test#echo_command"] = 0
+vim.g["test#term_position"] = "vertical"
+
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-f>", ":wincmd h<CR>")
@@ -22,6 +36,9 @@ vim.keymap.set("n", "(", "(zzzv")
 vim.keymap.set("n", ")", ")zzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
+vim.keymap.set("n", "<leader>h", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>l", ":bnext<CR>")
+
 
 
 vim.api.nvim_create_autocmd("TextYankPost", {
