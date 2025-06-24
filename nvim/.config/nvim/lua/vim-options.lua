@@ -6,7 +6,7 @@ vim.cmd("set clipboard+=unnamedplus")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.number = true
 
 vim.diagnostic.config({
