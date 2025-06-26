@@ -55,6 +55,18 @@ return {
           }
         }
       })
+      lspconfig.pylsp.setup({
+        settings = {
+          pylsp = {
+            plugings = {
+              mypy = {
+                enabled = true,
+                live_mode = true,
+              },
+            },
+          }
+        }
+      })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

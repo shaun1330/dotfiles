@@ -22,6 +22,14 @@ return {
             "%.jpg",
             "%.png",
           },
+          mappings = {
+            i = {
+              ["<C-d>"] = require("telescope.actions").delete_buffer,
+            },
+            n = {
+              ["<C-d>"] = require("telescope.actions").delete_buffer,
+            }
+          }
         },
         extensions = {
           ["ui-select"] = {

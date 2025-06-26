@@ -10,11 +10,13 @@ vim.g.maplocalleader = "\\"
 vim.opt.number = true
 
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
   signs = true,
   underline = true,
 })
 
+vim.opt.textwidth = 120
+vim.opt.colorcolumn = "120"
 
 vim.api.nvim_set_hl(0, "DapUIBackground", { bg = "#2e3440" })  -- change to your preferred color
 vim.g["test#python#runner"] = "pytest"
