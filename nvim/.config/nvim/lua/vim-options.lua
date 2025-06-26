@@ -16,6 +16,7 @@ vim.diagnostic.config({
 })
 
 
+vim.api.nvim_set_hl(0, "DapUIBackground", { bg = "#2e3440" })  -- change to your preferred color
 vim.g["test#python#runner"] = "pytest"
 vim.g["test#basic#start_normal"] = 1
 vim.g["test#preserve_screen"] = 1
@@ -39,6 +40,13 @@ vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>h", ":bprevious<CR>")
 vim.keymap.set("n", "<leader>l", ":bnext<CR>")
 
+vim.keymap.set("n", "<leader>rs", function()
+  require("custom.run_server").run_server(false)
+end, { desc = "Run server" })
+
+vim.keymap.set("n", "<leader>rd", function()
+  require("custom.run_server").run_server(true)
+end, { desc = "Run server (debug)" })
 
 
 vim.api.nvim_create_autocmd("TextYankPost", {

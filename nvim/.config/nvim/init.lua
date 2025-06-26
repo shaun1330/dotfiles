@@ -15,6 +15,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='Error', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='➡️', texthl='Success', linehl='DapStoppedLine', numhl='DapStoppedLine'})
+vim.fn.sign_define('DapBreakpointRejected', {text='⚠️', texthl='WarningMsg', linehl='', numhl=''})
+
+vim.api.nvim_set_hl(0, 'DapStoppedLine', { bg = '#3c3836', underline = true })
+vim.fn.sign_define('DapStopped', {
+  text='▶️',
+  texthl='DapStopped',
+  linehl='DapStoppedLine',
+  numhl='DapStoppedLine'
+})
+
+
 vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("vim-options")
