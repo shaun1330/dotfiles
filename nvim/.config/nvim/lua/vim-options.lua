@@ -20,6 +20,7 @@ vim.opt.colorcolumn = "120"
 
 vim.api.nvim_set_hl(0, "DapUIBackground", { bg = "#2e3440" })  -- change to your preferred color
 vim.g["test#python#runner"] = "pytest"
+vim.g["test#python#pytest#options"] = "-vv"
 vim.g["test#basic#start_normal"] = 1
 vim.g["test#preserve_screen"] = 1
 vim.g["test#neovim#start_normal"] = 1
@@ -41,6 +42,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>h", ":bprevious<CR>")
 vim.keymap.set("n", "<leader>l", ":bnext<CR>")
+vim.keymap.set("n", "<C-x>", ":bdelete<CR>")
 
 vim.keymap.set("n", "<leader>rs", function()
   require("custom.run_server").run_server(false)
