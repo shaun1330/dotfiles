@@ -19,7 +19,7 @@ return {
         untracked    = { text = '┆' },
       },
       signs_staged_enable          = true,
-      signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
+      signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`
       numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
       linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
       word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -40,7 +40,7 @@ return {
       current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
       sign_priority                = 6,
       update_debounce              = 100,
-      status_formatter             = nil, -- Use default
+      status_formatter             = nil,   -- Use default
       max_file_length              = 40000, -- Disable if file is longer than this (in lines)
       preview_config               = {
         -- Options passed to nvim_open_win
@@ -49,6 +49,27 @@ return {
         row = 0,
         col = 1
       },
+      on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        map('n', ']c', function()
+          if vim.wo.diff then return ']c' end
+          vim.schedule(gs.next_hunk)
+          return '<Ignore>'
+        end, { expr = true })
+
+        map('n', '[c', function()
+          if vim.wo.diff then return '[c' end
+          vim.schedule(gs.prev_hunk)
+          return '<Ignore>'
+        end, { expr = true })
+      end
     }
   end
 }
