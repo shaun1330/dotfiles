@@ -51,7 +51,26 @@ return {
       },
     }
 
-    dapui.setup()
+    dapui.setup({
+      layouts = {
+        {
+          elements = {
+            { id = "breakpoints", size = 0.30 },
+            { id = "stacks", size = 0.40 },
+            { id = "repl", size = 0.30 }
+          },
+          size = 40,
+          position = "left",
+        },
+        {
+          elements = {
+            { id = "scopes", size = 1.0 },
+          },
+          size = 20,
+          position = "bottom",
+        }
+      },
+    })
 
     dap.listeners.before.event_terminated["dapui_config"] = function()
       dapui.close()
