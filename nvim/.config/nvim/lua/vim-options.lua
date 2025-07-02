@@ -52,6 +52,23 @@ vim.keymap.set("n", "<leader>rd", function()
   require("custom.run_server").run_server(true)
 end, { desc = "Run server (debug)" })
 
+local diagnostis_active = false
+
+function _G.toggle_virtual_text()
+  diagnostis_active = not diagnostis_active
+  vim.diagnostic.config({
+    virtual_text = diagnostis_active,
+    signs = true,
+    underline = true,
+  })
+  if diagnostis_active then
+    print("Virtual text enabled")
+  else
+    print("Virtual text disabled")
+  end
+end
+
+vim.keymap.set("n", "<leader>vt", ":lua toggle_virtual_text()<CR>", { desc = "Toggle virtual text" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("HighlightOnYank", {}),
