@@ -52,6 +52,10 @@ vim.keymap.set("n", "<leader>rd", function()
   require("custom.run_server").run_server(true)
 end, { desc = "Run server (debug)" })
 
+
+require("custom.hover")
+
+
 local diagnostis_active = false
 
 function _G.toggle_virtual_text()
