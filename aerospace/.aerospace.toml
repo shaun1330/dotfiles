@@ -127,19 +127,19 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 #alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
 #alt-b = 'workspace B'
-#alt-c = 'workspace C'
+alt-c = 'workspace C'
 alt-d = 'workspace D'
 #alt-e = 'workspace E'
 alt-f = 'workspace F'
-#alt-g = 'workspace G'
+alt-g = 'workspace G'
 #alt-i = 'workspace I'
 alt-m = 'workspace M'
 alt-n = 'workspace N'
 alt-o = 'workspace O'
-#alt-p = 'workspace P'
+alt-p = 'workspace P'
 #alt-q = 'workspace Q'
 #alt-r = 'workspace R'
-#alt-s = 'workspace S'
+alt-s = 'workspace S'
 alt-t = 'workspace T'
 #alt-u = 'workspace U'
 #alt-v = 'workspace V'
@@ -147,8 +147,6 @@ alt-t = 'workspace T'
 #alt-x = 'workspace X'
 #alt-y = 'workspace Y'
 #alt-z = 'workspace Z'
-
-alt-c = 'close'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -162,11 +160,11 @@ alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 #alt-shift-a = 'move-node-to-workspace A'
 #alt-shift-b = 'move-node-to-workspace B'
-#alt-shift-c = 'move-node-to-workspace C'
+alt-shift-c = ['move-node-to-workspace C', 'workspace C']
 alt-shift-d = ['move-node-to-workspace D', 'workspace D']
 #alt-shift-e = 'move-node-to-workspace E'
 alt-shift-f = ['move-node-to-workspace F', 'workspace F']
-#alt-shift-g = 'move-node-to-workspace G'
+alt-shift-g = ['move-node-to-workspace G', 'workspace G']
 # alt-shift-i = 'move-node-to-workspace I'
 alt-shift-m = ['move-node-to-workspace M', 'workspace M']
 alt-shift-n = ['move-node-to-workspace N', 'workspace N']
@@ -221,17 +219,25 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
   if .app-id = 'io.hoppscotch.desktop'
-  run = 'move-node-to-workspace S' # Move iTerm2 to workspace S
+  run = 'move-node-to-workspace S' # Move Hoppscotch to workspace S
 
 [[on-window-detected]]
   if .app-id = 'com.oracle.workbench.MySQLWorkbench'
-  run = 'move-node-to-workspace D' # Move iTerm2 to workspace D
+  run = 'move-node-to-workspace D' # Move MySQLWorkbench to workspace D
 
 [[on-window-detected]]
   if .app-id = 'com.jetbrains.pycharm'
-  run = 'move-node-to-workspace P' # Move iTerm2 to workspace P
+  run = 'move-node-to-workspace P' # Move PyCharm to workspace P
 
 [[on-window-detected]]
   if .app-id = 'com.apple.Safari.WebApp.A83D4DC3-9515-4D5A-85D9-5086AE50AF06'
-  run = 'move-node-to-workspace O' # Move iTerm2 to workspace O
+  run = 'move-node-to-workspace O' # Move Outlook to workspace O
+
+[[on-window-detected]]
+  if .app-id = 'com.apple.Safari.WebApp.23A758A4-C7E3-48B2-A116-99AAC84CBA56'
+  run = 'move-node-to-workspace C' # Move Clickup to workspace C 
+
+[[on-window-detected]]
+  if .app-id = 'com.apple.Safari.WebApp.504A135A-390E-426C-AC3D-4BB51781F688'
+  run = 'move-node-to-workspace G' # Move ChatGPT to workspace G
 
