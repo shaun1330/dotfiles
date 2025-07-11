@@ -1,49 +1,26 @@
-local pickers = require("telescope.pickers")
-local finders = require("telescope.finders")
-local conf = require("telescope.config").values
-local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
-
-local instance_dir = "/Users/simonss/projects/polygon-central/instance"
-local script_path = "/Users/simonss/scripts/available-scripts/run_server.sh"
+local server_scripts = {
+  ["/Users/simonss/projects/polygon-central"] = function(debug)
+    require("custom.run_server_polygon-central").run_server(debug)
+  end,
+  ["/Users/simonss/projects/polygon-kms-server"] = function(debug)
+    require("custom.run_server_polygon-kms-server").run_server(debug)
+  end,
+}
 
 local M = {}
 
 M.run_server = function(debug)
-  local files = vim.fn.globpath(instance_dir, "*", false, true)
+  local cwd = vim.fn.getcwd()
 
-  pickers.new({}, {
-    prompt_title = "Select Instance File",
-    finder = finders.new_table {
-      results = vim.tbl_map(function(path)
-        return vim.fn.fnamemodify(path, ":t")
-      end, files),
-    },
-    sorter = conf.generic_sorter({}),
-    attach_mappings = function(prompt_bufnr, map)
-      local on_select = function()
-        local selection = action_state.get_selected_entry()
-        actions.close(prompt_bufnr)
+  for project_root, run_fn in pairs(server_scripts) do
+    if cwd:find(project_root, 1, true) == 1 then
+      run_fn(debug)
+      return
+    end
+  end
 
-        if not selection then
-          print("No selection")
-          return
-        end
-
-        local args = { script_path, selection.value }
-        if debug then
-          table.insert(args, "--debug")
-        end
-
-        vim.fn.jobstart(args, { detach = true })
-      end
-
-      map("i", "<CR>", on_select)
-      map("n", "<CR>", on_select)
-
-      return true
-    end,
-  }):find()
+  vim.notify("No server script configured for this project", vim.log.levels.WARN)
 end
 
 return M
+

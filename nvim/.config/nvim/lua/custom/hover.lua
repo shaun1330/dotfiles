@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>hq", function()
+vim.keymap.set("n", "<leader>wm", function()
   -- Get current file and line
   local file = vim.fn.expand("%")
   local line = vim.fn.line(".")
@@ -13,7 +13,7 @@ vim.keymap.set("n", "<leader>hq", function()
 
   -- Run the git log command
   local log = vim.fn.systemlist({ "git", "log", "--merges", "--ancestry-path", commit .. ".." .. branch })
-  local lines = vim.list_slice(log, 1, 4)
+  local lines = vim.list_slice(log, 1, 6)
   if #lines == 0 then lines = { "No merge found." } end
 
   -- Show result in floating window
