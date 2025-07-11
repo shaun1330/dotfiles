@@ -81,6 +81,14 @@ map <leader>sa <Action>(SearchEverywhere)
 map <leader>gd <Action>(GotoDeclaration)
 map <leader>ss <Action>(NextSplitter)
 
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+
 noremap <C-d> <C-d>zzzv
 noremap <C-u> <C-u>zzzv
 noremap n nzzzv
@@ -91,5 +99,6 @@ noremap ) )zzzv
 
 map <leader>h :bp<CR>
 map <leader>l :bn<CR>
+map <C-x> :bd<CR>
 
 xnoremap <leader>p \"_dP
