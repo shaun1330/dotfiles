@@ -22,6 +22,7 @@ return {
 					"biome",
 					"pylsp",
 					"ruff",
+          "pyright"
 				},
 			})
 		end,
@@ -37,23 +38,7 @@ return {
 			lspconfig.bashls.setup({ capabilities = capabilities })
 			lspconfig.biome.setup({ capabilities = capabilities })
 			lspconfig.ruff.setup({ capabilities = capabilities })
-			lspconfig.pylsp.setup({ capabilities = capabilities,
-				settings = {
-					pylsp = {
-						plugins = {
-							mypy = {
-								enabled = true,
-								live_mode = false,
-								strict = false,
-								overrides = { "--config-file", "mypy.ini" },
-							},
-							pycodestyle = {
-								maxLineLength = 120,
-							},
-						},
-					},
-				},
-			})
+			lspconfig.pyright.setup({ capabilities = capabilities })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, {})
       vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, {})
