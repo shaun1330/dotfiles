@@ -159,6 +159,7 @@ alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 alt-shift-a = ['move-node-to-workspace A', 'workspace A']
+alt-shift-b = ['move-node-to-workspace B', 'workspace B']
 alt-shift-c = ['move-node-to-workspace C', 'workspace C']
 alt-shift-d = ['move-node-to-workspace D', 'workspace D']
 alt-shift-f = ['move-node-to-workspace F', 'workspace F']
@@ -241,8 +242,16 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
   if .app-id = 'md.obsidian'
-  run = 'move-node-to-workspace B' # Move Obisidian to workspace B
+  run = 'move-node-to-workspace N' # Move Obisidian to workspace N
 
 [[on-window-detected]]
   if .app-id = 'com.parallels.desktop.console'
   run = 'move-node-to-workspace W' # Move Parallels to workspace W
+
+[[on-window-detected]]
+  if .app-id = 'com.usebruno.app'
+  run = 'move-node-to-workspace B' # Move Bruno to workspace B
+
+[[on-window-detected]]
+  if .app-id = 'com.apple.Safari.WebApp.F1F2716C-55F2-4FAA-8468-451F512A4FB2'
+  run = 'move-node-to-workspace A' # Move Database Access to workspace A
