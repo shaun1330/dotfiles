@@ -32,7 +32,12 @@ M.run_console = function()
 
         local args = { script_path, selection.value }
 
-        vim.fn.jobstart(args, { detach = true })
+        local job_id = vim.fn.jobstart(args, { detach = true })
+        if job_id <= 0 then
+          vim.notify("Failed to start job", vim.log.levels.ERROR)
+        else
+          vim.notify("Console started with job ID: " .. job_id, vim.log.levels.INFO)
+        end
       end
 
       map("i", "<CR>", on_select)

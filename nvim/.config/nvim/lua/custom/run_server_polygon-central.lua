@@ -35,6 +35,9 @@ M.run_server = function(debug)
           table.insert(args, "--debug")
         end
 
+        print("Starting server with args: " .. vim.inspect(args))
+        vim.notify("Starting server with args: " .. vim.inspect(args), vim.log.levels.INFO)
+
         vim.fn.jobstart(args, { detach = true })
       end
 
