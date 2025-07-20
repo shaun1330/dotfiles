@@ -44,6 +44,8 @@ vim.keymap.set("n", "<leader>h", ":bprevious<CR>")
 vim.keymap.set("n", "<leader>l", ":bnext<CR>")
 vim.keymap.set("n", "<C-x>", ":bdelete<CR>")
 
+vim.keymap.set("x", "<leader>p", [["_dP]], {noremap = true, silent = true})
+
 vim.keymap.set("n", "<leader>rs", function()
   require("custom.run_server").run_server(false)
 end, { desc = "Run server" })
