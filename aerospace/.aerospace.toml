@@ -28,7 +28,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 ]
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -255,3 +255,7 @@ alt-shift-l = ['join-with right', 'mode main']
 [[on-window-detected]]
   if .app-id = 'com.apple.Safari.WebApp.F1F2716C-55F2-4FAA-8468-451F512A4FB2'
   run = 'move-node-to-workspace A' # Move Database Access to workspace A
+
+[[on-window-detected]]
+  if .app-id = 'com.microsoft.rdc.macos'
+  run = 'move-node-to-workspace W' # Move Windows App to workspace W
