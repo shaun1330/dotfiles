@@ -225,7 +225,7 @@ alt-shift-l = ['join-with right', 'mode main']
   run = 'move-node-to-workspace P' # Move PyCharm to workspace P
 
 [[on-window-detected]]
-  if .app-id = 'com.apple.Safari.WebApp.A83D4DC3-9515-4D5A-85D9-5086AE50AF06'
+  if .app-id = 'com.microsoft.Outlook'
   run = 'move-node-to-workspace O' # Move Outlook to workspace O
 
 [[on-window-detected]]
